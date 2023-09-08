@@ -1,4 +1,4 @@
-# Userscripts
+## Userscripts
 
 Add userscript manager of choice to your browser:
 - [Tampermonkey](https://tampermonkey.net/)
