@@ -53,7 +53,7 @@
     const links = document.createElement("div");
     helperContainer.appendChild(links);
     links.style.position = 'absolute';
-    links.style.top = `15px`;
+    links.style.top = `11px`;
     links.style.right = '15px';
 
     config.targets.forEach((target) => {
