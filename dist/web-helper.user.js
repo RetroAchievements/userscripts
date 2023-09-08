@@ -53,8 +53,8 @@
     const links = document.createElement("div");
     helperContainer.appendChild(links);
     links.style.position = 'absolute';
-    links.style.top = `60px`;
-    links.style.right = '10px';
+    links.style.top = `15px`;
+    links.style.right = '15px';
 
     config.targets.forEach((target) => {
         const path = target.pathMap[window.location.pathname] !== undefined ? target.pathMap[window.location.pathname] : window.location.pathname;
