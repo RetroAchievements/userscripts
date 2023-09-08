@@ -6,6 +6,8 @@
 // @author       RetroAchievements.org
 // @match        https://retroachievements.org/*
 // @match        https://stage.retroachievements.org/*
+// @match        http://localhost:64000/*
+// @match        https://localhost:64000/*
 // @icon         https://retroachievements.org/favicon.png
 // @updateUrl    https://raw.githubusercontent.com/RetroAchievements/userscripts/master/dist/web-helper.user.js
 // @downloadUrl  https://raw.githubusercontent.com/RetroAchievements/userscripts/master/dist/web-helper.user.js
@@ -18,29 +20,59 @@
 
     const config = {
         'retroachievements.org': {
-            name: 'Live',
+            name: 'Production',
             targets: [
                 {
                     name: 'Stage',
-                    host: 'stage.retroachievements.org',
+                    url: 'https://stage.retroachievements.org',
                     // stage has redirects configured
                     pathMap: {},
-                }
+                },
+                {
+                    name: 'Local',
+                    url: 'http://localhost:64000',
+                    pathMap: {},
+                },
             ]
         },
         'stage.retroachievements.org': {
             name: 'Stage',
             targets: [
                 {
-                    name: 'Live',
-                    host: 'retroachievements.org',
+                    name: 'Production',
+                    url: 'https://retroachievements.org',
                     pathMap: {
                         '/create': false,
                     },
-                }
+                },
+                {
+                    name: 'Local',
+                    url: 'http://localhost:64000',
+                    pathMap: {},
+                },
+            ]
+        },
+        'localhost': {
+            name: 'Local',
+            targets: [
+                {
+                    name: 'Stage',
+                    url: 'https://stage.retroachievements.org',
+                    // stage has redirects configured
+                    pathMap: {},
+                },
+                {
+                    name: 'Production',
+                    url: 'https://retroachievements.org',
+                    pathMap: {
+                        '/create': false,
+                    },
+                },
             ]
         },
     }[window.location.hostname];
+
+    console.log(window.location.hostname);
 
     console.log(`%c RetroAchievements.org %c Web Helper v1.1.0 [${config.name}]`, 'font-size:11px;color:#000000;background:#40A2A5;padding:1px;border-radius:3px 0 0 3px;', 'font-size:11px;color:#FFF;background:#111;padding:1px;border-radius:0 3px 3px 0;')
 
@@ -51,10 +83,10 @@
     helperContainer.style.zIndex = 999999;
 
     const links = document.createElement("div");
+    links.className = 'absolute text-2xs flex flex-col p-1'
+    links.style.right = '0';
+    links.style.paddingRight = '15px';
     helperContainer.appendChild(links);
-    links.style.position = 'absolute';
-    links.style.top = `11px`;
-    links.style.right = '15px';
 
     config.targets.forEach((target) => {
         const path = target.pathMap[window.location.pathname] !== undefined ? target.pathMap[window.location.pathname] : window.location.pathname;
@@ -63,7 +95,7 @@
         const link = document.createElement("a");
         links.appendChild(link);
 
-        link.href = `https://${target.host}${path}${window.location.search}`;
+        link.href = `${target.url}${path}${window.location.search}`;
         link.target = '_blank';
         link.setAttribute('title', `Open in ${target.name} environment`);
         link.appendChild(document.createTextNode(`${target.name} ➡`));
