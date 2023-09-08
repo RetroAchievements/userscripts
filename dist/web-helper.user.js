@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         RetroAchievements.org Web Helper
 // @namespace    https://retroachievements.org/
-// @version      1.1.0
+// @version      1.1.1
 // @description  Add links to switch between environments
 // @author       RetroAchievements.org
 // @match        https://retroachievements.org/*
@@ -9,8 +9,8 @@
 // @match        http://localhost:64000/*
 // @match        https://localhost:64000/*
 // @icon         https://retroachievements.org/favicon.png
-// @updateUrl    https://raw.githubusercontent.com/RetroAchievements/userscripts/master/dist/web-helper.user.js
-// @downloadUrl  https://raw.githubusercontent.com/RetroAchievements/userscripts/master/dist/web-helper.user.js
+// @updateUrl    https://raw.githubusercontent.com/RetroAchievements/userscripts/main/dist/web-helper.user.js
+// @downloadUrl  https://raw.githubusercontent.com/RetroAchievements/userscripts/main/dist/web-helper.user.js
 // @license      MIT
 // @grant        none
 // ==/UserScript==
@@ -74,7 +74,7 @@
 
     console.log(window.location.hostname);
 
-    console.log(`%c RetroAchievements.org %c Web Helper v1.1.0 [${config.name}]`, 'font-size:11px;color:#000000;background:#40A2A5;padding:1px;border-radius:3px 0 0 3px;', 'font-size:11px;color:#FFF;background:#111;padding:1px;border-radius:0 3px 3px 0;')
+    console.log(`%c RetroAchievements.org %c Web Helper v1.1.1 [${config.name}]`, 'font-size:11px;color:#000000;background:#40A2A5;padding:1px;border-radius:3px 0 0 3px;', 'font-size:11px;color:#FFF;background:#111;padding:1px;border-radius:0 3px 3px 0;')
 
     const helperContainer = document.createElement("div");
     document.body.prepend(helperContainer);
