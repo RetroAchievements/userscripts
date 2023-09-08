@@ -5,7 +5,6 @@
 // @description  Restore the plaque logo on the front page
 // @author       RetroAchievements.org
 // @match        https://retroachievements.org/*
-// @match        https://dev.retroachievements.org/*
 // @icon         https://retroachievements.org/favicon.png
 // @updateUrl    https://raw.githubusercontent.com/RetroAchievements/userscripts/master/dist/plaque-logo.user.js
 // @downloadUrl  https://raw.githubusercontent.com/RetroAchievements/userscripts/master/dist/plaque-logo.user.js
