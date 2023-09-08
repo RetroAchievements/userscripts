@@ -10,6 +10,10 @@ Userscript Manager of choice:
 
 ## Userscripts
 
-**[Plaque Logo](https://raw.githubusercontent.com/RetroAchievements/userscripts/master/dist/plaque-logo.user.js)** restores the old plaque logo on the front page
+### [Plaque Logo](https://raw.githubusercontent.com/RetroAchievements/userscripts/master/dist/plaque-logo.user.js)
+Restore the old plaque logo on the front page
 ![Plaque logo screenshot](docs/plaque-logo.png)
 
+### [Web Helper](https://raw.githubusercontent.com/RetroAchievements/userscripts/master/dist/web-helper.user.js)
+Add links to switch between environments
+![Web helper screenshot](docs/web-helper.png)
