@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         RetroAchievements.org Web Helper
 // @namespace    https://retroachievements.org/
-// @version      1.1.1
+// @version      1.1.2
 // @description  Add links to switch between environments
 // @author       RetroAchievements.org
 // @match        https://retroachievements.org/*
@@ -74,7 +74,7 @@
 
     console.log(window.location.hostname);
 
-    console.log(`%c RetroAchievements.org %c Web Helper v1.1.1 [${config.name}]`, 'font-size:11px;color:#000000;background:#40A2A5;padding:1px;border-radius:3px 0 0 3px;', 'font-size:11px;color:#FFF;background:#111;padding:1px;border-radius:0 3px 3px 0;')
+    console.log(`%c RetroAchievements.org %c Web Helper v1.1.2 [${config.name}]`, 'font-size:11px;color:#000000;background:#40A2A5;padding:1px;border-radius:3px 0 0 3px;', 'font-size:11px;color:#FFF;background:#111;padding:1px;border-radius:0 3px 3px 0;')
 
     const helperContainer = document.createElement("div");
     document.body.prepend(helperContainer);
@@ -83,7 +83,12 @@
     helperContainer.style.zIndex = 999999;
 
     const links = document.createElement("div");
-    links.className = 'absolute text-2xs flex flex-col p-1'
+    links.style.display = 'flex';
+    links.style.flexDirection = 'row';
+    links.style.columnGap = '0.5rem';
+    links.style.padding = '.25rem';
+    links.style.fontSize = '.7rem';
+    links.style.position = 'absolute';
     links.style.right = '0';
     links.style.paddingRight = '15px';
     helperContainer.appendChild(links);
