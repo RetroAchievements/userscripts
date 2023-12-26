@@ -15,3 +15,8 @@ Restore the old plaque logo on the front page.
 Add links to switch between environments.
 Adjust `localhost` and `localhost:64000` to whatever host you're running locally, if you do.
 ![Web helper screenshot](docs/web-helper.png)
+
+## Other userscripts
+
+[Xymjak's scripts](https://retroachievements.org/viewtopic.php?t=12821)
+[Mindhral's scripts](https://github.com/Mindhral/RA_userscripts)
